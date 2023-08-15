@@ -10,4 +10,11 @@ class PostService
     {
         return Post::create($data);
     }
+
+    public function getAllPosts()
+    {
+        return Post::all();
+    }
+
+    
 }

@@ -21,7 +21,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = $this->postService->getAllPosts();
+        return response()->json(['message' => 'Posts fetched successfully', 'posts' => $posts], 201);
     }
 
     /**

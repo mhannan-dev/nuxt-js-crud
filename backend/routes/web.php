@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data['sessionUser'] = Session::get('sessionUser') ?? "";
+    $data['sessionUserAddress'] = Session::get('sessionUserAddress') ?? "";
+    return view('welcome', $data);
 });
+Route::resource('users', UserController::class);
