@@ -41,7 +41,8 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $post = $this->postService->getPostById($id);
+        return response()->json(['message' => 'Post fetched successfully', 'post' => $post], 201);
     }
 
     /**
@@ -49,7 +50,12 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+        $post = $this->postService->updatePost($id, $request->all());
+        return response()->json(['message' => 'Post updated successfully', 'post' => $post], 201);
     }
 
     /**
@@ -57,6 +63,7 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->postService->deletePost($id);
+        return response()->json(['message' => 'Post deleted successfully'], 201);
     }
 }

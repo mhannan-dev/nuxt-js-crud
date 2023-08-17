@@ -68,7 +68,7 @@ export default {
       this.isLoadingText = " Saving";
       var formError = this;
       axios
-        .post("http://localhost:8000/api/posts", this.postData)
+        .post(`http://localhost:8000/api/posts`, this.postData)
         .then((response) => {
           this.postData.title = "";
           this.postData.description = "";

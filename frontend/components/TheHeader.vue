@@ -15,16 +15,19 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <NuxtLink class="nav-link" href="#">Home</NuxtLink>
+            <NuxtLink class="nav-link" to="/">Home</NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" href="#">About</NuxtLink>
+            <NuxtLink class="nav-link" to="/about">About</NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" href="#">Services</NuxtLink>
+            <NuxtLink class="nav-link" to="/posts">Blogs</NuxtLink>
+          </li> 
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/posts/create">Blog Create</NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" href="#">Contact</NuxtLink>
+            <NuxtLink class="nav-link" to="/contact">Contact</NuxtLink>
           </li>
         </ul>
       </div>
