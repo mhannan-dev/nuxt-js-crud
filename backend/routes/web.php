@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\JsonDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,11 @@ Route::get('/', function () {
     $data['databaseUser'] = User::get();
     return view('welcome', $data);
 });
+Route::controller(JsonDataController::class)->prefix('data')->name('data.')->group(function () {
+    Route::any('create', 'create')->name('create');
+    Route::any('store', 'store')->name('store');
+    Route::any('view', 'view')->name('view');
+});
+
+
 Route::resource('users', UserController::class);
