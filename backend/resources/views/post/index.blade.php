@@ -8,7 +8,7 @@
                 <div class="row g-0">
                     <div class="col-sm-6 col-md-6">
                         <select class="form-select" aria-label="Default select example" name="category_id">
-                            <option selected>Select category</option>
+                            <option value="" selected>Select category</option>
                             @foreach($categories as $key => $item)
                             <option value="{{ $item->id }}">{{ $item->title }}</option>
                             @endforeach
@@ -16,9 +16,9 @@
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <select class="form-select" aria-label="Default select example" name="status">
-                            <option selected>Select Status</option>
+                            <option value="" selected>Select Status</option>
                             <option value="1">Active</option>
-                            <option value=01">Inacive</option>
+                            <option value="0">Inacive</option>
                         </select>
                     </div>
                 </div>
