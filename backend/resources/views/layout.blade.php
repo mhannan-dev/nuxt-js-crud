@@ -27,6 +27,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('data.view') }}">Json View</a>
                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('post/index') }}">Blog</a>
+                        </li>
                     </ul>
                 </div>
             </div>

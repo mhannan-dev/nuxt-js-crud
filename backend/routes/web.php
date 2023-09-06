@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\JsonDataController;
 
 /*
@@ -29,5 +30,9 @@ Route::controller(JsonDataController::class)->prefix('data')->name('data.')->gro
     Route::any('view', 'view')->name('view');
 });
 
+Route::controller(ReportController::class)->prefix('post')->name('post.')->group(function () {
+    Route::any('index', 'index')->name('index');
+    Route::any('report', 'report')->name('report');
+});
 
 Route::resource('users', UserController::class);
