@@ -39,35 +39,4 @@ class ReportController extends Controller
         $status = $request->input('status');
         return Excel::download(new PostsExport($categoryId, $status), 'post.csv');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        $post = $this->postService->getPostById($id);
-        return response()->json(['message' => 'Post fetched successfully', 'post' => $post], 201);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        $this->validate($request, [
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-        ]);
-        $post = $this->postService->updatePost($id, $request->all());
-        return response()->json(['message' => 'Post updated successfully', 'post' => $post], 201);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        $this->postService->deletePost($id);
-        return response()->json(['message' => 'Post deleted successfully'], 201);
-    }
 }
