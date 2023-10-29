@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       colors: {
         golden: '#FFD700',
+        navColor: '#00C58E',
       },
     },
   },
